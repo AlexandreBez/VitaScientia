@@ -1,0 +1,21 @@
+$background-image-path: "/assets/imgs/background2.jpeg";
+
+main {
+  background-image: url($background-image-path);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden;
+  overflow-x: 0;
+  color: #e0ae5b;
+  #menu-area a{
+    color: #E28247;
+  }
+  #search-form input,input::placeholder{
+    border-color: #E28247;
+  }
+}

@@ -1,0 +1,13 @@
+com.vitascientia
+com.vitascientia.config
+com.vitascientia.controller
+com.vitascientia.email
+com.vitascientia.exeptions
+com.vitascientia.model
+com.vitascientia.model.repository
+com.vitascientia.security
+com.vitascientia.security.filter
+com.vitascientia.security.manager
+com.vitascientia.service
+com.vitascientia.service.implementation
+com.vitascientia.service.objects

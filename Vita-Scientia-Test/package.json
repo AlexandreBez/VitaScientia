@@ -1,0 +1,18 @@
+{
+  "name": "vita-scientia-test",
+  "version": "1.0.0",
+  "description": "Caso de testes do vita scientia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "npx cypress open",
+    "record": "npx cypress run --record --key 714ec787-8960-41cd-9f1a-2049b013dbcb"
+  },
+  "author": "Lucas Alexandre",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.5.0",
+    "moment": "^2.29.4",
+    "mysql2": "^3.6.3"
+  }
+}

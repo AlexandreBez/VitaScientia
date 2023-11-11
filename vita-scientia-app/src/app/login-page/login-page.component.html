@@ -1,0 +1,39 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
+<main class="d-flex">
+  <div class="flex-row p-5" id="main-form">
+    
+    <div class="alert alert-warning flex-column" id="alert" *ngIf="errorMsg != null" role="alert">
+      <i class="bi bi-exclamation-circle text-dark"></i>
+      {{errorMsg}}
+    </div>
+    <div class="flex-column mb-3 mt-4">
+      <img src="/assets/imgs/logo.png" id="logo" alt="logo" width="180" height="180">
+    </div>
+
+    <form class="flex-column" (ngSubmit)="authenticateUser()" #loginForm="ngForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">
+          <i class="bi bi-person-circle"></i>
+          Usuário
+        </label>
+        <input type="email" class="form-control" placeholder="exemplo@email.com" id="username"
+          aria-describedby="emailHelp" name="username" #username="ngModel" ngModel email>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">
+          <i class="bi bi-lock"></i>
+          Senha
+        </label>
+        <input type="password" placeholder="**********" class="form-control" id="password" name="password"
+          #password="ngModel" ngModel>
+      </div>
+      <button id="login" (click)="authenticateUser()" class="btn btn-submit mb-3 ps-4 pe-4">
+        <i class="bi bi-door-open"></i>
+        Entrar
+      </button>
+      <div>
+        <a id="recoverPasswordLink" routerLink="/RecoverPassword">Resetar minha senha</a>
+      </div>
+    </form>
+  </div>
+</main>

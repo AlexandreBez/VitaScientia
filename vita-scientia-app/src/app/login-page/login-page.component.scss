@@ -1,0 +1,44 @@
+$background-image-path: "/assets/imgs/background.png";
+
+main {
+  background-image: url($background-image-path);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden;
+  overflow-x: 0;
+  color: #e0ae5b;
+  i{
+    color: #d5c9af;
+  }
+  #main-form {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 30%;
+    #logo {
+      margin-left: 20%;
+    }
+    .btn-submit {
+      margin-left: 35%;
+      background-color: #a2451f;
+      color: #e0ae5b;
+    }
+    .btn-submit:hover{
+        background-color: #7a3a20;
+        color: #ff9d00;
+    }
+    a{
+        margin-left: 25%;
+        color: #E28247;
+        font-size: large;
+        text-decoration: none;
+    }
+    a:hover{
+        color: #e95a01;
+        text-decoration: none;
+    }
+  }
+}
