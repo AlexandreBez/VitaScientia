@@ -1,0 +1,89 @@
+<app-spinner *ngIf="carregando"></app-spinner>
+<main class="d-flex justify-content-center">
+    <div class="flex-row p-5 mt-4" id="main-form">
+
+        <div class="alert alert-info flex-column" id="alert" *ngIf="mensagemDeSucesso != null" role="alert">
+            <i class="bi bi-exclamation-circle text-dark"></i>
+            {{mensagemDeSucesso}}
+        </div>
+
+        <div class="flex-column mb-2">
+            <img src="/assets/imgs/logo.png" id="logo" alt="logo" width="130" height="130">
+        </div>
+
+        <div class="flex-column pt-4 text-center" *ngIf="!tokenValido">
+            <h2 class="mt-5">{{mensagemDeErro}}</h2>
+            <hr>
+        </div>
+
+        <div class="flex-column pt-5" *ngIf="!tokenValido">
+            <a type="button" routerLink="/Login" id="backToLogin" class="btn btn-back mt-2 ps-4 pe-4">
+                <i class="bi bi-door-open"></i>
+                Retornar ao Login
+            </a>
+        </div>
+
+
+        <form class="flex-column" (ngSubmit)="resetaSenha()" #formularioResetaSenha="ngForm" *ngIf="tokenValido">
+            <h6 class="justify-content-center">Senha deve conter:
+                <br>
+                <ul>
+                    <li>
+                        Minimo de 12 caracteres
+                        <i class="bi bi-check-circle" style="color: #00BF63;"
+                            *ngIf="password.value && password.value.length >= 12"></i>
+                        <i class="bi bi-x-circle" style="color: #ff0000;"
+                            *ngIf="!password.value || password.value.length < 12"></i>
+                    </li>
+                    <li>
+                        Caracteres especiais
+                        <i class="bi bi-check-circle" style="color: #00BF63;"
+                            *ngIf="caracteresEspeciaisRegex.test(password.value) == true"></i>
+                        <i class="bi bi-x-circle" style="color: #ff0000;"
+                            *ngIf="caracteresEspeciaisRegex.test(password.value) == false"></i>
+                    </li>
+                    <li>
+                        Letras maiusculas
+                        <i class="bi bi-check-circle" style="color: #00BF63;"
+                            *ngIf="letrasMaiusculasRegex.test(password.value) == true"></i>
+                        <i class="bi bi-x-circle" style="color: #ff0000;"
+                            *ngIf="letrasMaiusculasRegex.test(password.value) == false"></i>
+                    </li>
+                    <li>
+                        Números
+                        <i class="bi bi-check-circle" style="color: #00BF63;"
+                            *ngIf="numerosRegex.test(password.value) == true"></i>
+                        <i class="bi bi-x-circle" style="color: #ff0000;"
+                            *ngIf="numerosRegex.test(password.value) == false"></i>
+                    </li>
+                </ul>
+            </h6>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">
+                    <i class="bi bi-lock"></i>
+                    Nova senha
+                </label>
+                <input type="password" placeholder="**********" minlength="8" class="form-control" id="novaSenha"
+                    name="password" #password="ngModel" ngModel required>
+            </div>
+            <div class="mb-3">
+                <label for="confirm" class="form-label">
+                    <i class="bi bi-lock"></i>
+                    Confirmar
+                </label>
+                <input type="password" placeholder="**********" class="form-control" id="confirmaSenha" name="confirm"
+                    #confirm="ngModel" ngModel required>
+                <span class="help-block"
+                    *ngIf="password.value !== confirm.value && (password.dirty || password.touched)">
+                    As senhas não coincidem*
+                </span>
+            </div>
+            <button type="submit" [disabled]="password.value !== confirm.value || !formularioResetaSenha.valid" id="atualizaSenhaBtn"
+                class="btn btn-submit mb-3 ps-4 pe-4">
+                <i class="bi bi-arrow-clockwise"></i>
+                Resetar senha
+            </button>
+        </form>
+    </div>
+</main>

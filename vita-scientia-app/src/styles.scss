@@ -1,13 +1,16 @@
 /* Import the font using @font-face */
 @font-face {
-  font-family: 'Neue-Machina';
-  src: 
-    url(assets/fonts/NeueMachina-Light.otf) format('otf'), 
-    url(assets/fonts/NeueMachina-Regular.otf) format('otf'), 
-    url(assets/fonts/NeueMachina-Ultrabold.otf) format('otf')
+  font-family: "Neue-Machina";
+  src: url(assets/fonts/NeueMachina-Light.otf) format("otf"),
+    url(assets/fonts/NeueMachina-Regular.otf) format("otf"),
+    url(assets/fonts/NeueMachina-Ultrabold.otf) format("otf");
 }
 
-body{
-  min-height: 100vh;
+@import '/node_modules/@ng-select/ng-select/scss/default.theme.scss';
+
+body {
   font-family: "Neue-Machina";
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
 }

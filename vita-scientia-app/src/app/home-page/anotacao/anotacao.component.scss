@@ -1,0 +1,45 @@
+.title {
+  color: #e28247;
+}
+
+.btn-outline {
+  border-color: #ff6100;
+  color: #ff6100;
+}
+
+.btn-outline:hover {
+  background-color: #ff6100;
+  color: #fff;
+}
+
+.note-list {
+  padding-right: 20%;
+}
+
+.list-group-item {
+  background-color: rgb(35, 36, 39);
+  color: #e28247;
+  border: none;
+}
+
+.list-group-item:hover {
+  background-color: #464c53;
+  color: #e28247;
+}
+
+#list-menu {
+  width: 45%;
+  overflow-y: scroll;
+  max-height: 600px;
+}
+
+.note-content {
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.custom-border {
+  border: 2px solid #ff6100;
+  border-radius: 10px;
+  background-color: #464c53;
+}

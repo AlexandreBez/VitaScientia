@@ -1,0 +1,84 @@
+2024-01-09T07:59:55.019-03:00  INFO 22268 --- [restartedMain] c.vitascientia.VitaScientiaApplication   : Starting VitaScientiaApplication using Java 17.0.7 with PID 22268 (C:\Users\adm\Desktop\Repositorys\VitaScientia\Vita-Scientia-Backend\vita-scientia\target\classes started by adm in C:\Users\adm\Desktop\Repositorys\VitaScientia\Vita-Scientia-Backend\vita-scientia)
+2024-01-09T07:59:55.027-03:00  INFO 22268 --- [restartedMain] c.vitascientia.VitaScientiaApplication   : The following 1 profile is active: "teste"
+2024-01-09T07:59:55.075-03:00  INFO 22268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-09T07:59:55.075-03:00  INFO 22268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-09T07:59:56.155-03:00  INFO 22268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-09T07:59:56.232-03:00  INFO 22268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 8 JPA repository interfaces.
+2024-01-09T07:59:56.805-03:00  INFO 22268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-01-09T07:59:56.813-03:00  INFO 22268 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-09T07:59:56.814-03:00  INFO 22268 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2024-01-09T07:59:56.875-03:00  INFO 22268 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-09T07:59:56.875-03:00  INFO 22268 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1799 ms
+2024-01-09T07:59:57.060-03:00  INFO 22268 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-09T07:59:57.106-03:00  INFO 22268 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2024-01-09T07:59:57.244-03:00  WARN 22268 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2024-01-09T07:59:57.344-03:00  INFO 22268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-09T07:59:57.589-03:00  INFO 22268 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37a39e
+2024-01-09T07:59:57.592-03:00  INFO 22268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-09T07:59:57.645-03:00  INFO 22268 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2024-01-09T07:59:58.430-03:00  INFO 22268 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-09T07:59:58.439-03:00  INFO 22268 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-09T07:59:59.364-03:00  WARN 22268 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-09T07:59:59.980-03:00  INFO 22268 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@646671b2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35dce7b2, org.springframework.security.web.context.SecurityContextHolderFilter@3c991dc1, org.springframework.security.web.header.HeaderWriterFilter@170881a, org.springframework.web.filter.CorsFilter@1df30e97, org.springframework.security.web.authentication.logout.LogoutFilter@3b4dd3cc, com.vitascientia.exceptions.ExceptionAutenticacaoFiltro@1f8021f1, com.vitascientia.security.filters.JWTAuthorizationFilter@48bc2852, com.vitascientia.security.filters.AuthenticationFilter@1a8fa780, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2e893efd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7207728a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b52de53, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f0d95f0, org.springframework.security.web.session.SessionManagementFilter@423e1652, org.springframework.security.web.access.ExceptionTranslationFilter@7f1bc674, org.springframework.security.web.access.intercept.AuthorizationFilter@4558f2d9]
+2024-01-09T08:00:00.310-03:00  INFO 22268 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-09T08:00:00.384-03:00  INFO 22268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-01-09T08:00:00.461-03:00  INFO 22268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2024-01-09T08:00:00.462-03:00  INFO 22268 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-09T08:00:00.462-03:00  INFO 22268 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2024-01-09T08:00:00.482-03:00  INFO 22268 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-01-09T08:00:00.482-03:00  INFO 22268 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 93 ms
+2024-01-09T08:00:00.493-03:00  INFO 22268 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-01-09T08:00:00.736-03:00  INFO 22268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2024-01-09T08:00:00.749-03:00  INFO 22268 --- [restartedMain] c.vitascientia.VitaScientiaApplication   : Started VitaScientiaApplication in 6.136 seconds (process running for 6.994)
+2024-01-09T08:00:01.104-03:00  INFO 22268 --- [RMI TCP Connection(9)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-09T08:00:01.105-03:00  INFO 22268 --- [RMI TCP Connection(9)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-01-09T08:00:01.106-03:00  INFO 22268 --- [RMI TCP Connection(9)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-01-09T08:00:07.736-03:00  INFO 22268 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-01-09T08:00:07.744-03:00  INFO 22268 --- [RMI TCP Connection(6)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-01-09T08:00:07.755-03:00  INFO 22268 --- [RMI TCP Connection(6)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-01-09T08:00:07.755-03:00  INFO 22268 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-01-09T08:00:07.762-03:00  INFO 22268 --- [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-09T08:00:07.766-03:00  INFO 22268 --- [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-09T08:00:07.774-03:00  INFO 22268 --- [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-09T08:36:22.873-03:00  INFO 8304 --- [restartedMain] c.vitascientia.VitaScientiaApplication   : Starting VitaScientiaApplication using Java 17.0.7 with PID 8304 (C:\Users\adm\Desktop\Repositorys\VitaScientia\Vita-Scientia-Backend\vita-scientia\target\classes started by adm in C:\Users\adm\Desktop\Repositorys\VitaScientia\Vita-Scientia-Backend\vita-scientia)
+2024-01-09T08:36:22.875-03:00  INFO 8304 --- [restartedMain] c.vitascientia.VitaScientiaApplication   : The following 1 profile is active: "teste"
+2024-01-09T08:36:22.915-03:00  INFO 8304 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-09T08:36:22.915-03:00  INFO 8304 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-09T08:36:23.915-03:00  INFO 8304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-09T08:36:23.987-03:00  INFO 8304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 8 JPA repository interfaces.
+2024-01-09T08:36:24.540-03:00  INFO 8304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-01-09T08:36:24.551-03:00  INFO 8304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-09T08:36:24.552-03:00  INFO 8304 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2024-01-09T08:36:24.619-03:00  INFO 8304 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-09T08:36:24.619-03:00  INFO 8304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1704 ms
+2024-01-09T08:36:24.816-03:00  INFO 8304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-09T08:36:24.862-03:00  INFO 8304 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2024-01-09T08:36:25.001-03:00  WARN 8304 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2024-01-09T08:36:25.110-03:00  INFO 8304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-09T08:36:25.361-03:00  INFO 8304 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@769e7306
+2024-01-09T08:36:25.363-03:00  INFO 8304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-09T08:36:25.417-03:00  INFO 8304 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2024-01-09T08:36:26.235-03:00  INFO 8304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-09T08:36:26.244-03:00  INFO 8304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-09T08:36:27.277-03:00  WARN 8304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-09T08:36:28.055-03:00  INFO 8304 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@460d9aa0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24f2bb6a, org.springframework.security.web.context.SecurityContextHolderFilter@4ef374d5, org.springframework.security.web.header.HeaderWriterFilter@c6c6646, org.springframework.web.filter.CorsFilter@21a6399a, org.springframework.security.web.authentication.logout.LogoutFilter@656843ad, com.vitascientia.exceptions.ExceptionAutenticacaoFiltro@60fb0f8c, com.vitascientia.security.filters.JWTAuthorizationFilter@4a0941a9, com.vitascientia.security.filters.AuthenticationFilter@7b918a69, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@218035b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@167852b4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2feea708, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b6b1668, org.springframework.security.web.session.SessionManagementFilter@21d19edc, org.springframework.security.web.access.ExceptionTranslationFilter@5e23f640, org.springframework.security.web.access.intercept.AuthorizationFilter@645623fb]
+2024-01-09T08:36:28.409-03:00  INFO 8304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-09T08:36:28.481-03:00  INFO 8304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-01-09T08:36:28.566-03:00  INFO 8304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2024-01-09T08:36:28.567-03:00  INFO 8304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-09T08:36:28.567-03:00  INFO 8304 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2024-01-09T08:36:28.585-03:00  INFO 8304 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-01-09T08:36:28.585-03:00  INFO 8304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 100 ms
+2024-01-09T08:36:28.597-03:00  INFO 8304 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-01-09T08:36:28.856-03:00  INFO 8304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2024-01-09T08:36:28.869-03:00  INFO 8304 --- [restartedMain] c.vitascientia.VitaScientiaApplication   : Started VitaScientiaApplication in 6.333 seconds (process running for 7.023)
+2024-01-09T08:36:29.522-03:00  INFO 8304 --- [RMI TCP Connection(9)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-09T08:36:29.522-03:00  INFO 8304 --- [RMI TCP Connection(9)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-01-09T08:36:29.523-03:00  INFO 8304 --- [RMI TCP Connection(9)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-01-09T08:37:36.862-03:00  INFO 8304 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-01-09T08:37:36.871-03:00  INFO 8304 --- [RMI TCP Connection(10)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-01-09T08:37:36.886-03:00  INFO 8304 --- [RMI TCP Connection(10)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-01-09T08:37:36.887-03:00  INFO 8304 --- [RMI TCP Connection(10)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-01-09T08:37:36.895-03:00  INFO 8304 --- [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-09T08:37:36.901-03:00  INFO 8304 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-09T08:37:36.912-03:00  INFO 8304 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

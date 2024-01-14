@@ -5,16 +5,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+// TODO: Auto-generated Javadoc
 /**
- * Classe main para inicialização do servidor
- * @author Lucas Alexandre
- * @since 1.0.0
+ * The Class VitaScientiaApplication.
  */
 @SpringBootApplication
 public class VitaScientiaApplication {
 
 	/**
-	 * Metodo principal main de inicializacao
+	 * The main method.
+	 *
 	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
@@ -22,8 +22,9 @@ public class VitaScientiaApplication {
 	}
 	
 	/**
-	 * Bcrypt password encoder injetado para encriptar senhas
-	 * @return b crypt password encoder
+	 * B crypt password encoder.
+	 *
+	 * @return the b crypt password encoder
 	 */
 	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {

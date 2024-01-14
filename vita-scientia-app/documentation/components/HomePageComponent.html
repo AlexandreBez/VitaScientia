@@ -78,7 +78,8 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>Componente possuindo as funções para a pagina home</p>
+        <h2>Componente possuindo as funções para a pagina Home</h2>
+<p>Ultima atualizacao:</p>
 
     </p>
 
@@ -131,79 +132,219 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#logout" >logout</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/home-page/home-page.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Cria uma instancia do HomePageComponent.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/app/home-page/home-page.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Funcao de logout da sessao</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-
+import { Router } from &#x27;@angular/router&#x27;;
 /**
- * Componente possuindo as funções para a pagina home
+ * Componente possuindo as funções para a pagina Home
+ * @author Lucas Alexandre
+ * @date 28/12/2023 - 16:33:27
+ * @version 2.0.0
+ * @export
+ * @class HomePageComponent
+ * @typedef {HomePageComponent}
+ * ----------------------------------------
+ * Ultima atualizacao:
+ * @date 28/12/2023 - 16:33:27
  * @author Lucas Alexandre
  */
 @Component({
   selector: &#x27;app-home-page&#x27;,
   templateUrl: &#x27;./home-page.component.html&#x27;,
-  styleUrls: [&#x27;./home-page.component.scss&#x27;]
+  styleUrls: [&#x27;./home-page.component.scss&#x27;],
 })
 export class HomePageComponent {
+  /**
+   * Cria uma instancia do HomePageComponent.
+   * @date 28/12/2023 - 16:33:27
+   * @constructor
+   * @param {Router} router
+   */
+  constructor(private router: Router) {}
 
+  /**
+   * Funcao de logout da sessao
+   * @function
+   * @date 28/12/2023 - 16:33:27
+   */
+  logout() {
+    sessionStorage.clear();
+    this.router.navigate([&#x27;Login&#x27;]);
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;d-flex&quot;&gt;
-  &lt;div class&#x3D;&quot;flex-row flex-fill mb-auto bg-dark&quot; id&#x3D;&quot;main-form&quot;&gt;
-    &lt;nav class&#x3D;&quot;navbar navbar-expand-md bg-dark border-bottom border-body&quot; data-bs-theme&#x3D;&quot;dark&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;d-flex flex-column&quot;&gt;
+  &lt;div class&#x3D;&quot;p-2 bg-dark sticky-top&quot; id&#x3D;&quot;main-form&quot;&gt;
+    &lt;nav class&#x3D;&quot;navbar navbar-expand-md &quot; data-bs-theme&#x3D;&quot;dark&quot;&gt;
       &lt;div class&#x3D;&quot;container-fluid&quot; id&#x3D;&quot;menu-area&quot;&gt;
         &lt;a class&#x3D;&quot;navbar-brand ms-5&quot; href&#x3D;&quot;#&quot;&gt;
           &lt;img src&#x3D;&quot;/assets/imgs/logo.png&quot; alt&#x3D;&quot;logo&quot; width&#x3D;&quot;115&quot; height&#x3D;&quot;115&quot;&gt;
         &lt;/a&gt;
-        &lt;button class&#x3D;&quot;navbar-toggler&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot; data-bs-target&#x3D;&quot;#navbarScroll&quot;
+        &lt;button class&#x3D;&quot;navbar-toggler&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot; data-bs-target&#x3D;&quot;#menu-area&quot;
           aria-controls&#x3D;&quot;navbarScroll&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
           &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
         &lt;/button&gt;
-        &lt;div class&#x3D;&quot;collapse justify-content-end navbar-collapse&quot; id&#x3D;&quot;navbarScroll&quot;&gt;
+        &lt;div class&#x3D;&quot;collapse justify-content-end navbar-collapse&quot; id&#x3D;&quot;menu-area&quot;&gt;
           &lt;ul class&#x3D;&quot;navbar-nav me-2 my-2 my-lg-0 navbar-nav-scroll&quot; style&#x3D;&quot;--bs-scroll-height: 200px;&quot;&gt;
             &lt;!-- Workstation --&gt;
             &lt;li class&#x3D;&quot;nav-item dropdown&quot;&gt;
               &lt;a class&#x3D;&quot;nav-link dropdown-toggle&quot; href&#x3D;&quot;#&quot; role&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;dropdown&quot;
-                aria-expanded&#x3D;&quot;false&quot;&gt;
+                aria-expanded&#x3D;&quot;false&quot; id&#x3D;&quot;Workstation&quot;&gt;
                 &lt;i class&#x3D;&quot;bi bi-person-workspace&quot;&gt;&lt;/i&gt;
                 Workstation
               &lt;/a&gt;
               &lt;ul class&#x3D;&quot;dropdown-menu&quot;&gt;
                 &lt;li&gt;
-                  &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;
-                    &lt;i class&#x3D;&quot;bi bi-lightbulb&quot;&gt;&lt;/i&gt;
-                    Ideias
-                  &lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                  &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;
+                  &lt;a class&#x3D;&quot;dropdown-item&quot; routerLink&#x3D;&quot;Anotacoes&quot; routerLinkActive&#x3D;&quot;active-route&quot; id&#x3D;&quot;Anotações&quot;&gt;
                     &lt;i class&#x3D;&quot;bi bi-journal-bookmark&quot;&gt;&lt;/i&gt;
-                    Minhas Notas
+                    Anotações
                   &lt;/a&gt;
                 &lt;/li&gt;
                 &lt;li&gt;
-                  &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;
-                    &lt;i class&#x3D;&quot;bi bi-clipboard-data&quot;&gt;&lt;/i&gt;
-                    Projetos
-                  &lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                  &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;
-                    &lt;i class&#x3D;&quot;bi bi-search&quot;&gt;&lt;/i&gt;
+                  &lt;a class&#x3D;&quot;dropdown-item&quot; routerLink&#x3D;&quot;Pesquisas&quot; routerLinkActive&#x3D;&quot;active-route&quot; id&#x3D;&quot;Pesquisas&quot;&gt;
+                    &lt;i class&#x3D;&quot;bi bi-clipboard&quot;&gt;&lt;/i&gt;
                     Pesquisas
+                  &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;a class&#x3D;&quot;dropdown-item&quot; routerLink&#x3D;&quot;Projetos&quot; routerLinkActive&#x3D;&quot;active-route&quot; id&#x3D;&quot;Projetos&quot;&gt;
+                    &lt;i class&#x3D;&quot;bi bi-folder&quot;&gt;&lt;/i&gt;
+                    Projetos
                   &lt;/a&gt;
                 &lt;/li&gt;
               &lt;/ul&gt;
@@ -244,19 +385,20 @@ export class HomePageComponent {
                 &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Researches&lt;/a&gt;&lt;/li&gt;
               &lt;/ul&gt;
             &lt;/li&gt;
+            &lt;!-- logout --&gt;
+            &lt;li class&#x3D;&quot;nav-item ms-1&quot;&gt;
+              &lt;button class&#x3D;&quot;btn btn-danger&quot; id&#x3D;&quot;logout&quot; (click)&#x3D;&quot;logout()&quot;&gt;
+                &lt;i class&#x3D;&quot;bi bi-door-open&quot;&gt;&lt;/i&gt;
+              &lt;/button&gt;
+            &lt;/li&gt;
           &lt;/ul&gt;
-          &lt;form id&#x3D;&quot;search-form&quot; class&#x3D;&quot;d-flex&quot; role&#x3D;&quot;search&quot;&gt;
-            &lt;input class&#x3D;&quot;form-control me-2&quot; type&#x3D;&quot;search&quot; placeholder&#x3D;&quot;Search&quot; aria-label&#x3D;&quot;Search&quot;&gt;
-            &lt;button class&#x3D;&quot;btn btn-outline-success&quot; type&#x3D;&quot;submit&quot;&gt;Search&lt;/button&gt;
-          &lt;/form&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/nav&gt;
-    &lt;div class&#x3D;&quot;flex-row&quot;&gt;
-      &lt;router-outlet&gt;&lt;/router-outlet&gt;
-    &lt;/div&gt;
-
   &lt;/div&gt;
+
+  &lt;router-outlet class&#x3D;&quot;mt-4&quot;&gt;&lt;/router-outlet&gt;
+
 &lt;/main&gt;</code></pre>
     </div>
 
@@ -265,6 +407,7 @@ export class HomePageComponent {
                     <code>./home-page.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">$background-image-path: &quot;/assets/imgs/background2.jpeg&quot;;
+$main-color: #FF6100;
 
 main {
   background-image: url($background-image-path);
@@ -275,14 +418,18 @@ main {
   flex-wrap: nowrap;
   height: 100vh;
   max-height: 100vh;
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: 0;
   color: #e0ae5b;
-  #menu-area a{
-    color: #E28247;
+  #menu-area a {
+    color: #e28247;
+    font-size: large;
   }
-  #search-form input,input::placeholder{
-    border-color: #E28247;
+  #menu-area a:hover {
+    background-color: rgba(255, 255, 255, 0.151);
+  }
+  .active-route{
+    background-color: rgba(255, 255, 255, 0.151);
   }
 }
 </code></pre>
@@ -313,8 +460,8 @@ main {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><main class="d-flex">  <div class="flex-row flex-fill mb-auto bg-dark" id="main-form">    <nav class="navbar navbar-expand-md bg-dark border-bottom border-body" data-bs-theme="dark">      <div class="container-fluid" id="menu-area">        <a class="navbar-brand ms-5" href="#">          <img src="/assets/imgs/logo.png" alt="logo" width="115" height="115">        </a>        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">          <span class="navbar-toggler-icon"></span>        </button>        <div class="collapse justify-content-end navbar-collapse" id="navbarScroll">          <ul class="navbar-nav me-2 my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">            <!-- Workstation -->            <li class="nav-item dropdown">              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"                aria-expanded="false">                <i class="bi bi-person-workspace"></i>                Workstation              </a>              <ul class="dropdown-menu">                <li>                  <a class="dropdown-item" href="#">                    <i class="bi bi-lightbulb"></i>                    Ideias                  </a>                </li>                <li>                  <a class="dropdown-item" href="#">                    <i class="bi bi-journal-bookmark"></i>                    Minhas Notas                  </a>                </li>                <li>                  <a class="dropdown-item" href="#">                    <i class="bi bi-clipboard-data"></i>                    Projetos                  </a>                </li>                <li>                  <a class="dropdown-item" href="#">                    <i class="bi bi-search"></i>                    Pesquisas                  </a>                </li>              </ul>            </li>            <!-- Laboratory -->            <li class="nav-item dropdown">              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"                aria-expanded="false">                Laboratory              </a>              <ul class="dropdown-menu">                <li><a class="dropdown-item" href="#">My Notes</a></li>                <li><a class="dropdown-item" href="#">Projects</a></li>                <li><a class="dropdown-item" href="#">Researches</a></li>              </ul>            </li>            <!-- IO -->            <li class="nav-item dropdown">              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"                aria-expanded="false">                IO              </a>              <ul class="dropdown-menu">                <li><a class="dropdown-item" href="#">My Notes</a></li>                <li><a class="dropdown-item" href="#">Projects</a></li>                <li><a class="dropdown-item" href="#">Researches</a></li>              </ul>            </li>            <!-- Calculator -->            <li class="nav-item dropdown">              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"                aria-expanded="false">                Calculator              </a>              <ul class="dropdown-menu">                <li><a class="dropdown-item" href="#">My Notes</a></li>                <li><a class="dropdown-item" href="#">Projects</a></li>                <li><a class="dropdown-item" href="#">Researches</a></li>              </ul>            </li>          </ul>          <form id="search-form" class="d-flex" role="search">            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">            <button class="btn btn-outline-success" type="submit">Search</button>          </form>        </div>      </div>    </nav>    <div class="flex-row">      <router-outlet></router-outlet>    </div>  </div></main></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RecoverPasswordComponent', 'selector': 'app-recover-password'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'}];
+        var COMPONENT_TEMPLATE = '<div><main class="d-flex flex-column">  <div class="p-2 bg-dark sticky-top" id="main-form">    <nav class="navbar navbar-expand-md " data-bs-theme="dark">      <div class="container-fluid" id="menu-area">        <a class="navbar-brand ms-5" href="#">          <img src="/assets/imgs/logo.png" alt="logo" width="115" height="115">        </a>        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-area"          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">          <span class="navbar-toggler-icon"></span>        </button>        <div class="collapse justify-content-end navbar-collapse" id="menu-area">          <ul class="navbar-nav me-2 my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">            <!-- Workstation -->            <li class="nav-item dropdown">              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"                aria-expanded="false" id="Workstation">                <i class="bi bi-person-workspace"></i>                Workstation              </a>              <ul class="dropdown-menu">                <li>                  <a class="dropdown-item" routerLink="Anotacoes" routerLinkActive="active-route" id="Anotações">                    <i class="bi bi-journal-bookmark"></i>                    Anotações                  </a>                </li>                <li>                  <a class="dropdown-item" routerLink="Pesquisas" routerLinkActive="active-route" id="Pesquisas">                    <i class="bi bi-clipboard"></i>                    Pesquisas                  </a>                </li>                <li>                  <a class="dropdown-item" routerLink="Projetos" routerLinkActive="active-route" id="Projetos">                    <i class="bi bi-folder"></i>                    Projetos                  </a>                </li>              </ul>            </li>            <!-- Laboratory -->            <li class="nav-item dropdown">              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"                aria-expanded="false">                Laboratory              </a>              <ul class="dropdown-menu">                <li><a class="dropdown-item" href="#">My Notes</a></li>                <li><a class="dropdown-item" href="#">Projects</a></li>                <li><a class="dropdown-item" href="#">Researches</a></li>              </ul>            </li>            <!-- IO -->            <li class="nav-item dropdown">              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"                aria-expanded="false">                IO              </a>              <ul class="dropdown-menu">                <li><a class="dropdown-item" href="#">My Notes</a></li>                <li><a class="dropdown-item" href="#">Projects</a></li>                <li><a class="dropdown-item" href="#">Researches</a></li>              </ul>            </li>            <!-- Calculator -->            <li class="nav-item dropdown">              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"                aria-expanded="false">                Calculator              </a>              <ul class="dropdown-menu">                <li><a class="dropdown-item" href="#">My Notes</a></li>                <li><a class="dropdown-item" href="#">Projects</a></li>                <li><a class="dropdown-item" href="#">Researches</a></li>              </ul>            </li>            <!-- logout -->            <li class="nav-item ms-1">              <button class="btn btn-danger" id="logout" (click)="logout()">                <i class="bi bi-door-open"></i>              </button>            </li>          </ul>        </div>      </div>    </nav>  </div>  <router-outlet class="mt-4"></router-outlet></main></div>'
+    var COMPONENTS = [{'name': 'AnotacaoComponent', 'selector': 'app-anotacao'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PesquisasComponent', 'selector': 'app-pesquisas'},{'name': 'ProjetosComponent', 'selector': 'app-projetos'},{'name': 'RecuperarSenhaComponent', 'selector': 'app-recuperar-senha'},{'name': 'ResetaSenhaComponent', 'selector': 'app-reseta-senha'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomePageComponent'};
 </script>

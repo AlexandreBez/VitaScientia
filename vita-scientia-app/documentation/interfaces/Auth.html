@@ -72,7 +72,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/login-page/interface/auth.ts</code>
+            <code>src/app/global/interface/Helpers/Auth.ts</code>
         </p>
 
 
@@ -98,9 +98,21 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#expiration" 
+                                        <a href="#data_expiracao" 
 >
-                                            expiration
+                                            data_expiracao
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#email" 
+>
+                                            email
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#id" 
+>
+                                            id
                                         </a>
                                 </li>
                                 <li>
@@ -124,9 +136,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="expiration"></a>
-                                        <span class="name "><b>expiration</b>
-                                            <a href="#expiration">
+                                        <a name="data_expiracao"></a>
+                                        <span class="name "><b>data_expiracao</b>
+                                            <a href="#data_expiracao">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -134,7 +146,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>expiration:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>data_expiracao:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -151,12 +163,72 @@
 
 
 
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>expiration date</p>
-</div>
-                                </td>
-                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="email"></a>
+                                        <span class="name "><b>email</b>
+                                            <a href="#email">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>email:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="id"></a>
+                                        <span class="name "><b>id</b>
+                                            <a href="#id">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>id:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -190,12 +262,6 @@
 
 
 
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>token</p>
-</div>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -204,14 +270,10 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface Auth {
-  /**
-   * token
-   */
+  id: number;
+  email: string;
   token: string;
-  /**
-   * expiration date
-   */
-  expiration: string;
+  data_expiracao: string;
 }
 </code></pre>
     </div>

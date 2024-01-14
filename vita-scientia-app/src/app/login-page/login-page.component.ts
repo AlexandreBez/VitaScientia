@@ -1,11 +1,19 @@
 import { Component, ViewChild } from '@angular/core';
-import { LoginPageService } from './service/login-page.service';
+import { UsuarioService } from '../global/services/Usuario.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from './interface/user';
-
+import { AuthResponse } from '../global/interface/Objetos/Auth/AuthResponse';
 /**
- * Componente possuindo as funções para a pagina de login
+ * Componente possuindo as funções para a pagina login
+ * @author Lucas Alexandre
+ * @date 26/12/2023 - 19:10:28
+ * @version 2.0.0
+ * @export
+ * @class LoginPageComponent
+ * @typedef {LoginPageComponent}
+ * ----------------------------------------
+ * Ultima atualizacao:
+ * @date 26/12/2023 - 19:10:28
  * @author Lucas Alexandre
  */
 @Component({
@@ -15,70 +23,88 @@ import { User } from './interface/user';
 })
 export class LoginPageComponent {
   /**
-   * Variavel de controle do component de loading
+   * Controle do carregamento
+   * @date 26/12/2023 - 19:10:28
    * @type {boolean}
    */
-  isLoading: boolean = false;
+  carregando: boolean = false;
   /**
-   * Variavel para guardar a mensagem de erro
+   * Controle de mensagem de erro
+   * @date 26/12/2023 - 19:10:28
+   * @type {*}
    */
-  loginMessageError: any = null;
+  mensagemDeErro: string = null;
   /**
-   * Variavel para guardar a mensagem de sucesso
-   */
-  errorMsg: string = null;
-  /**
-   * Variavel que pega os valores do form no HTML
+   * Formulario de login
+   * @date 26/12/2023 - 19:10:28
    * @type {NgForm}
    */
-  @ViewChild('loginForm') loginFormData: NgForm;
+  @ViewChild('formularioLogin') dadosFormularioLogin: NgForm;
 
   /**
-   * Contrutor para injetar outros mocdulos e funçoes
-   * @param activatedRoute
-   * @param router
+   * Cria uma instancia do LoginPageComponent.
+   * @date 26/12/2023 - 19:10:28
+   * @constructor
+   * @param {UsuarioService} usuarioService
+   * @param {Router} router
    */
   constructor(
-    private loginPageService: LoginPageService,
+    private usuarioService: UsuarioService,
     private router: Router
   ) {}
 
   /**
-   * Função para pegar do formulario o username e senha e enviar para o backend
-   * Após enviar, caso nenhum erro aconteça o sistema apresenta uma mensagem de successo e envia o
-   * usuario para a home page. Caso contrario, uma mensagem de erro aparece
+   * Funcao de autenticacao do usuario
+   * @function
+   * @date 26/12/2023 - 19:10:28
    */
-  authenticateUser() {
-    this.isLoading = true;
-    this.errorMsg = null;
-    let login_user: User = {
-      email: this.loginFormData.value.username,
-      password: this.loginFormData.value.password,
-    };
-    this.loginPageService.authenticateUser(login_user).subscribe(
-      (data) => {
-        
-        this.loginPageService.saveAuthenticationData(
-          data.token,
-          data.expiration
-        );
+  autenticaUsuario() {
+    this.carregando = true;
+    this.mensagemDeErro = null;
 
-        setTimeout(() => {
-          this.isLoading = false;
-          this.router.navigate(['/Home']);
-        }, 2000);
+    this.usuarioService.autenticacaoUsuario({
+      email: this.dadosFormularioLogin.value.email,
+      senha: this.dadosFormularioLogin.value.senha
+    }).subscribe(
+      (data) => {
+        this.pegaIdDoUsuario(data.email, data.jwt, data.expiracao);
       },
       (error) => {
-        this.isLoading = false;
+        this.carregando = false;
         switch (error.status) {
           case 401:
-            this.errorMsg = 'Usuario/Senha está incorreta...';
+            this.mensagemDeErro = 'Usuario/Senha incorreta...';
             break;
           default:
-            this.errorMsg = 'Oops...Algo de errado aconteceu';
+            this.mensagemDeErro = 'Oops...Algo de errado aconteceu';
             break;
         }
       }
     );
+  }
+
+  /**
+   * Funcao para pegar o id do usuario
+   * @function
+   * @date 26/12/2023 - 19:10:28
+   */
+  pegaIdDoUsuario(email: string,jwt: string, expiracao: string){
+    this.carregando = true;
+    this.usuarioService.idDoUsuario(jwt, email).subscribe(
+      data => {
+        sessionStorage.setItem('AUTH', JSON.stringify({
+          id_usuario: data,
+          email: email,
+          jwt: jwt,
+          expiracao: expiracao
+        }));
+        this.router.navigate(['/Home']);
+      },
+      erro => {
+        console.error(erro);
+        this.carregando = false;
+        this.mensagemDeErro = 'Oops...Algo de errado aconteceu';
+      }
+    )
   }
 }

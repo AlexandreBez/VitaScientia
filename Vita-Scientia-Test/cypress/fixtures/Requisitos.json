@@ -1,0 +1,18 @@
+[
+  {
+    "item": "Fios",
+    "preco": 15.76
+  },
+  {
+    "item": "Arduino Uno",
+    "preco": 124.76
+  },
+  {
+    "item": "Protoboard",
+    "preco": 50
+  },
+  {
+    "item": "Potenciometro",
+    "preco": 1.25
+  }
+]

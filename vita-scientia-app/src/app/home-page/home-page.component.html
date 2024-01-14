@@ -1,46 +1,40 @@
-<main class="d-flex">
-  <div class="flex-row flex-fill mb-auto bg-dark" id="main-form">
-    <nav class="navbar navbar-expand-md bg-dark border-bottom border-body" data-bs-theme="dark">
+<main class="d-flex flex-column">
+  <div class="p-2 bg-dark sticky-top" id="main-form">
+    <nav class="navbar navbar-expand-md " data-bs-theme="dark">
       <div class="container-fluid" id="menu-area">
         <a class="navbar-brand ms-5" href="#">
           <img src="/assets/imgs/logo.png" alt="logo" width="115" height="115">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-area"
           aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse justify-content-end navbar-collapse" id="navbarScroll">
+        <div class="collapse justify-content-end navbar-collapse" id="menu-area">
           <ul class="navbar-nav me-2 my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
             <!-- Workstation -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+                aria-expanded="false" id="Workstation">
                 <i class="bi bi-person-workspace"></i>
                 Workstation
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="#">
-                    <i class="bi bi-lightbulb"></i>
-                    Ideias
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" routerLink="Anotacoes" routerLinkActive="active-route" id="Anotações">
                     <i class="bi bi-journal-bookmark"></i>
-                    Minhas Notas
+                    Anotações
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
-                    <i class="bi bi-clipboard-data"></i>
-                    Projetos
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <i class="bi bi-search"></i>
+                  <a class="dropdown-item" routerLink="Pesquisas" routerLinkActive="active-route" id="Pesquisas">
+                    <i class="bi bi-clipboard"></i>
                     Pesquisas
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="Projetos" routerLinkActive="active-route" id="Projetos">
+                    <i class="bi bi-folder"></i>
+                    Projetos
                   </a>
                 </li>
               </ul>
@@ -81,17 +75,18 @@
                 <li><a class="dropdown-item" href="#">Researches</a></li>
               </ul>
             </li>
+            <!-- logout -->
+            <li class="nav-item ms-1">
+              <button class="btn btn-danger" id="logout" (click)="logout()">
+                <i class="bi bi-door-open"></i>
+              </button>
+            </li>
           </ul>
-          <form id="search-form" class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </nav>
-    <div class="flex-row">
-      <router-outlet></router-outlet>
-    </div>
-
   </div>
+
+  <router-outlet class="mt-4"></router-outlet>
+
 </main>

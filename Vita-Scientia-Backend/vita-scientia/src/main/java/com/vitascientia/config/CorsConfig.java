@@ -8,17 +8,17 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+// TODO: Auto-generated Javadoc
 /**
- * Classe CorsConfig para configurar o CORS(Cross Origin)
- * @author Lucas Alexandre
- * @since 1.0.0
+ * The Class CorsConfig.
  */
 @Configuration
 public class CorsConfig {
 
     /**
-     * Funcao usada para criar uma configuracao CORS, assim permitindo a comunicacao com o Angular e somente o mesmo
-     * @return configuracao CORS
+     * Cors configuration source.
+     *
+     * @return the cors configuration source
      */
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {

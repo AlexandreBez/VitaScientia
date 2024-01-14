@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "email": "TestVitaScientiaI@outlook.com",
+    "senha": "Welcome@12345"
+  },
+  {
+    "id": 2,
+    "email": "TestVitaScientiaII@outlook.com",
+    "senha": "Welcome@12345"
+  },
+  {
+    "id": 3,
+    "email": "TestVitaScientiaIII@outlook.com",
+    "senha": "Welcome@12345"
+  }
+]

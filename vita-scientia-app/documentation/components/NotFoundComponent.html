@@ -370,10 +370,10 @@ export class NotFoundComponent {
     &lt;div class&#x3D;&quot;container&quot;&gt;
         &lt;div class&#x3D;&quot;content&quot;&gt;
             &lt;h2&gt;404&lt;/h2&gt;
-            &lt;h4&gt;Opss! Page not found&lt;/h4&gt;
-            &lt;p&gt;The page you are looking for doesn&#x27;t exist. You may have mistyped the address or the page may have moved&lt;/p&gt;
+            &lt;h4&gt;Opss! Página não econtrada&lt;/h4&gt;
+            &lt;p&gt;A página que você está procurando não existe ou foi movida&lt;/p&gt;
             &lt;button class&#x3D;&quot;btn btn-danger&quot;&gt;
-                &lt;a href&#x3D;&quot;login&quot;&gt;Go Back&lt;/a&gt;
+                &lt;a  routerLink&#x3D;&quot;/Home&quot;&gt;Voltar&lt;/a&gt;
             &lt;/button&gt;
         &lt;/div&gt;
     &lt;/div&gt;
@@ -389,7 +389,7 @@ export class NotFoundComponent {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(30deg, #4db4e4, #b923ff);
+    background-image: url(&quot;/assets/imgs/background.png&quot;);
     height: 100vh;
 }
 
@@ -405,7 +405,7 @@ export class NotFoundComponent {
     border-radius: 10px;
     justify-content: center;
     align-items: center;
-    background: url(&quot;/assets/images/404.png&quot;), #151729;
+    background: url(&quot;/assets/imgs/404.png&quot;), #151729;
     box-shadow: 0 15px 30px rgba(0,0,0,.5);
 }
 
@@ -465,8 +465,8 @@ export class NotFoundComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="body-div">    <div class="container">        <div class="content">            <h2>404</h2>            <h4>Opss! Page not found</h4>            <p>The page you are looking for doesn\'t exist. You may have mistyped the address or the page may have moved</p>            <button class="btn btn-danger">                <a href="login">Go Back</a>            </button>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RecoverPasswordComponent', 'selector': 'app-recover-password'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'}];
+        var COMPONENT_TEMPLATE = '<div><div class="body-div">    <div class="container">        <div class="content">            <h2>404</h2>            <h4>Opss! Página não econtrada</h4>            <p>A página que você está procurando não existe ou foi movida</p>            <button class="btn btn-danger">                <a  routerLink="/Home">Voltar</a>            </button>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AnotacaoComponent', 'selector': 'app-anotacao'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PesquisasComponent', 'selector': 'app-pesquisas'},{'name': 'ProjetosComponent', 'selector': 'app-projetos'},{'name': 'RecuperarSenhaComponent', 'selector': 'app-recuperar-senha'},{'name': 'ResetaSenhaComponent', 'selector': 'app-reseta-senha'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NotFoundComponent'};
 </script>

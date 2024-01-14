@@ -1,0 +1,313 @@
+<!-- Criar anotacao -->
+<div class="modal fade" id="criaAnotacaoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" style="margin-left: 16%;">
+        <div class="modal-content" style="width: 180%;">
+            <div class="modal-header" style="background-color: #76533E;">
+                <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">Criar anotação</h1>
+            </div>
+            <div class="modal-body text-white" style="background-color: #292F33;">
+                <div class="alert alert-warning" id="alert-erro-modal" role="alert" *ngIf="mensagemDeErroModal">
+                    <i class="bi bi-exclamation-circle"></i>
+                    {{mensagemDeErroModal}}
+                </div>
+                <div class="alert alert-info" id="alert-sucesso-modal" role="alert" *ngIf="mensagemDeSucessoModal">
+                    <i class="bi bi-check-circle"></i>
+                    {{mensagemDeSucessoModal}}
+                </div>
+                <form #formularioNovaNota="ngForm">
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Titulo*</label>
+                        <input type="text" maxlength="255" class="form-control" id="titulo"
+                            placeholder="Titulo da anotação..." name="titulo" #titulo="ngModel" ngModel required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Descricao" class="form-label">Descrição*</label>
+                        <textarea maxlength="65535" class="form-control" id="descricao" rows="10"
+                            placeholder="Descrição da anotação..." name="descricao" #descricao="ngModel" ngModel
+                            required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="background-color: #76533E;">
+                <button #modalNovaAnotacao type="button" id="cancelaNovaAnotacaoBtn" class="btn btn-dark"
+                    data-bs-dismiss="modal" (click)="formularioNovaNota.reset()">
+                    <i class="bi bi-x-circle"></i>
+                    Cancelar
+                </button>
+                <button type="button" class="btn btn-success" id="salvarAnotacaoBtn"
+                    [disabled]="mensagemDeSucessoModal != null || !formularioNovaNota.valid"
+                    (click)="criaNovaAnotacao()">
+                    <i class="bi bi-clipboard-plus"></i>
+                    Salvar
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Atualiza anotacao -->
+<div class="modal fade" id="atualizaAnotacaoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" style="margin-left: 16%;">
+        <div class="modal-content" style="width: 180%;">
+            <div class="modal-header" style="background-color: #76533E;">
+                <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">Atualizar anotação</h1>
+            </div>
+            <div class="modal-body text-white" id="modal_atualiza_anotacao" style="background-color: #292F33;">
+                <div class="alert alert-warning" id="alert-erro-modal" role="alert" *ngIf="mensagemDeErroModal">
+                    <i class="bi bi-exclamation-circle"></i>
+                    {{mensagemDeErroModal}}
+                </div>
+                <div class="alert alert-info" id="alert-sucesso-modal" role="alert" *ngIf="mensagemDeSucessoModal">
+                    <i class="bi bi-check-circle"></i>
+                    {{mensagemDeSucessoModal}}
+                </div>
+                <form>
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Titulo*</label>
+                        <input type="text" maxlength="255" class="form-control" id="titulo"
+                            placeholder="Titulo da nota..." name="titulo" [(ngModel)]="novo_titulo_anotacao">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Descricao" class="form-label">Descrição*</label>
+                        <textarea maxlength="65535" class="form-control" id="descricao" rows="10"
+                            placeholder="Descrição da anotação..." name="descricao"
+                            [(ngModel)]="nova_descricao_anotacao"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="background-color: #76533E;">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal" #modalAtualizaAnotacao>
+                    <i class="bi bi-x-circle"></i>
+                    Cancelar
+                </button>
+                <button type="button" id="atualizarAnotacaoBtn" class="btn btn-primary"
+                    [disabled]="mensagemDeSucessoModal != null || novo_titulo_anotacao == '' || nova_descricao_anotacao == ''"
+                    (click)="atualizaAnotacao()">
+                    <i class="bi bi-arrow-repeat"></i>
+                    Atualizar
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Deleta anotacao -->
+<div class="modal fade" id="deletaAnotacao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #76533E;">
+                <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">Deletar anotacao</h1>
+            </div>
+            <div class="modal-body text-white" style="background-color: #292F33;">
+                <div class="alert alert-warning" id="alert-erro-modal" role="alert" *ngIf="mensagemDeErroModal">
+                    <i class="bi bi-exclamation-circle"></i>
+                    {{mensagemDeErroModal}}
+                </div>
+                <div class="alert alert-info" id="alert-sucesso-modal" role="alert" *ngIf="mensagemDeSucessoModal">
+                    <i class="bi bi-check-circle"></i>
+                    {{mensagemDeSucessoModal}}
+                </div>
+                Confirmar ação?
+            </div>
+            <div class="modal-footer" style="background-color: #76533E;">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal" #modalDeletaAnotacao>
+                    <i class="bi bi-x-circle"></i>
+                    Cancelar
+                </button>
+                <button type="button" [disabled]="mensagemDeSucessoModal != null" class="btn btn-danger"
+                    (click)="deletaAnotacao()">
+                    <i class="bi bi-clipboard-x"></i>
+                    Confirmar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-spinner *ngIf="carregando"></app-spinner>
+
+<div class="bg-dark ms-5 me-5 mb-5" style="border-radius: 10px;" *ngIf="!carregando">
+
+    <nav class="navbar" style="border: 1px solid #76533E;border-radius: 10px;">
+        <div class="container-fluid">
+
+            <form class="d-flex" role="search" #formularioBuscaAnotacao="ngForm">
+
+                <button class="btn dropdown-toggle btn-outline me-2" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" id="filtro">
+                    <i class="bi bi-funnel"></i>
+                </button>
+
+                <ul class="dropdown-menu" style="background-color: #2B2B2B;">
+
+                    <li>
+                        <a class="dropdown-item btn-outline" type="button">
+                            <div class="form-check">
+                                <input [(ngModel)]="filtroSelecionado" (click)="this.formularioBuscaAnotacao.reset"
+                                    class="form-check-input" value="titulo" type="radio" name="titulo" id="titulo">
+                                <label (click)="this.formularioBuscaAnotacao.reset" class="form-check-label custom-text"
+                                    for="titulo">
+                                    <i class="bi bi-clipboard"></i>
+                                    Titulo
+                                </label>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item btn-outline" type="button">
+                            <div class="form-check">
+                                <input [(ngModel)]="filtroSelecionado" (click)="this.formularioBuscaAnotacao.reset"
+                                    class="form-check-input" value="id" type="radio" name="id" id="id">
+                                <label (click)="this.formularioBuscaAnotacao.reset" class="form-check-label custom-text"
+                                    for="id">
+                                    <i class="bi bi-hash"></i>
+                                    Id
+                                </label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="input-group" *ngIf="filtroSelecionado == 'id'">
+                    <span class="input-group-text" id="basic-addon1">#ANT</span>
+                    <input class="form-control me-2" style="width: 200px;" min="1" type="number"
+                        placeholder="Pesquisar id" aria-label="Search" id="search_input" name="search_input"
+                        #search_input="ngModel" ngModel>
+                </div>
+                <input class="form-control me-2" style="width: 230px;" type="text" placeholder="Pesquisar titulo"
+                    aria-label="Search" id="search_input" name="search_input" #search_input="ngModel" ngModel
+                    *ngIf="filtroSelecionado == 'titulo'">
+                <button class="btn btn-outline-success" id="search_btn" (click)="filtro();indexAnotacao = null">
+                    <i class="bi bi-binoculars"></i>
+                </button>
+            </form>
+
+            <h3 class="title">Anotações</h3>
+
+            <button class="btn btn-outline" data-bs-toggle="modal" id="novaAnotacao"
+                data-bs-target="#criaAnotacaoModal">
+                <i class="bi bi-journal-plus"></i>
+                Nova anotacao
+            </button>
+        </div>
+    </nav>
+
+    <div class="alert alert-warning" role="alert" *ngIf="mensagemDeErro">
+        <i class="bi bi-exclamation-circle"></i>
+        {{mensagemDeErro}}
+    </div>
+    <div class="alert alert-info" role="alert" *ngIf="mensagemDeSucesso">
+        <i class="bi bi-check-circle"></i>
+        {{mensagemDeSucesso}}
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center align-items-center p-5" style="color: #E28247;"
+        *ngIf="dadoAnotacao.content.length < 1">
+        <img src="/assets/imgs/SemConteudo.svg" alt="Nada encontrado" class="img-fluid"
+            style="width: 40%; height: auto;">
+    </div>
+
+    <div class="d-flex flex-row" style="color: #E28247;" *ngIf="dadoAnotacao.content.length >= 1">
+
+        <div class="p-2" id="list-menu">
+
+            <div *ngIf="carregandoLista" class="progress" role="progressbar" aria-label="Animated striped example"
+                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-dark progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+            </div>
+
+            <nav aria-label="Page navigation" *ngIf="dadoAnotacao.totalPages > 1 && pesquisaTitulo == false">
+                <ul class="pagination justify-content-center">
+                    <!-- Previous normal Page -->
+                    <li class="page-item" [class.disabled]="dadoAnotacao.first">
+                        <a class="page-link" (click)="listaDeAnotacoes(dadoAnotacao.number - 1);indexAnotacao = null">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+
+                    <!-- Page Numbers -->
+                    <li class="page-item" *ngFor="let pageIndex of pegaArrayDePaginas(dadoAnotacao.totalPages)">
+                        <a class="page-link" [class.active]="pageIndex === dadoAnotacao.number"
+                            (click)="listaDeAnotacoes(pageIndex);indexAnotacao = null">
+                            {{ pageIndex + 1 }}
+                        </a>
+                    </li>
+
+                    <!-- Next normal Page -->
+                    <li class="page-item" [class.disabled]="dadoAnotacao.last">
+                        <a class="page-link" (click)="listaDeAnotacoes(dadoAnotacao.number + 1);indexAnotacao = null">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <nav aria-label="Page navigation" *ngIf="dadoAnotacao.totalPages > 1 && pesquisaTitulo == true">
+                <ul class="pagination justify-content-center">
+                    <!-- Previous normal Page -->
+                    <li class="page-item" [class.disabled]="dadoAnotacao.first">
+                        <a class="page-link" (click)="pesquisaPeloTitulo(dadoAnotacao.number - 1);indexAnotacao = null">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+
+                    <!-- Page Numbers -->
+                    <li class="page-item" *ngFor="let pageIndex of pegaArrayDePaginas(dadoAnotacao.totalPages)">
+                        <a class="page-link" [class.active]="pageIndex === dadoAnotacao.number"
+                            (click)="pesquisaPeloTitulo(pageIndex);indexAnotacao = null">
+                            {{ pageIndex + 1 }}
+                        </a>
+                    </li>
+
+                    <!-- Next normal Page -->
+                    <li class="page-item" [class.disabled]="dadoAnotacao.last">
+                        <a class="page-link" (click)="pesquisaPeloTitulo(dadoAnotacao.number + 1);indexAnotacao = null">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <ul class="list-group" id="lista-anotacao" *ngIf="!carregandoLista">
+                <li (click)="conteudoAnotacao = dados;indexAnotacao = i" value="{{dados.anotacao_titulo}}"
+                    [class.custom-border]="indexAnotacao == i" class="list-group-item list-group-item-action"
+                    type="button" id="anotacao" *ngFor="let dados of dadoAnotacao.content;let i = index">
+                    <button [disabled]="indexAnotacao != i" class="btn btn-outline-danger me-1" data-bs-toggle="modal"
+                        data-bs-target="#deletaAnotacao" [id]="'deleta_anotacao_'+dados.id_anotacao" (click)="id_anotacao = dados.id_anotacao;indexAnotacao = i">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    #ANT{{dados.id_anotacao}} - {{dados.anotacao_titulo}}
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="p-2 container-fluid note-content" id="conteudo_anotacao">
+            <div *ngIf="conteudoAnotacao != null">
+                <h3 class="text-center" id="anotacao_titulo">
+                    #ANT{{conteudoAnotacao.id_anotacao}} - {{conteudoAnotacao.anotacao_titulo}}
+                    <button
+                        (click)="novo_titulo_anotacao = conteudoAnotacao.anotacao_titulo; nova_descricao_anotacao = conteudoAnotacao.anotacao_descricao; id_anotacao = conteudoAnotacao.id_anotacao"
+                        class="btn btn-outline-primary" id="atualiza_anotacao" data-bs-toggle="modal" data-bs-target="#atualizaAnotacaoModal">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                </h3>
+                <h6 class="note-date text-center" id="data_criacao">Criado em: {{conteudoAnotacao.data_criacao}}</h6>
+                <hr>
+                <h6 class="ms-2" id="anotacao_descricao">{{conteudoAnotacao.anotacao_descricao}}</h6>
+            </div>
+        </div>
+
+    </div>
+
+</div>

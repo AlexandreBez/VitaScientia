@@ -1,9 +1,10 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
+import './library/Autenticacao/AutenticacaoPage';
+import './library/HomePage';
+import './library/Anotacao/AnotacaoPage';
+import './library/Anotacao/AnotacaoDB';
+import './library/Pesquisa/PesquisaPage';
+import './library/Pesquisa/PesquisaDB';
+import './library/Projeto/ProjetoPage';
+import './library/Projeto/ProjetoDB';
+import './library/Requisitos/Requisitos';
+import './library/Requisitos/RequisitoDB';

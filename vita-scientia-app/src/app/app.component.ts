@@ -1,10 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-
+import { Component } from '@angular/core';
 /**
- *  App main e o ponto inicial do projeto e o qual Angular usa para renderizar
- *  @author Lucas Alexandre
+ * Componente possuindo as funções para a pagina app
+ * @author Lucas Alexandre
+ * @date 26/12/2023 - 19:12:16
+ * @version 2.0.0
+ * @export
+ * @class AppComponent
+ * @typedef {AppComponent}
+ * ----------------------------------------
+ * Ultima atualizacao:
+ * @date 26/12/2023 - 19:12:16
+ * @author Lucas Alexandre
  */
 @Component({
   selector: 'app-root',
@@ -12,9 +18,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
-
-  constructor(
-    private router: Router
-  ){}
 
 }

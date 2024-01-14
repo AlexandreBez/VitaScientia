@@ -62,7 +62,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/app-routing.module.ts</code>
+            <code>src/app/global/routers/app-routing.module.ts</code>
         </p>
 
 
@@ -81,8 +81,8 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
-import { AuthenticatedGuard } from &#x27;./security/authenticated.guard&#x27;;
-import { AppComponent } from &#x27;./app.component&#x27;;
+import { ValidaToken } from &#x27;../guards/ValidaToken.guard&#x27;;
+import { AppComponent } from &#x27;../../app.component&#x27;;
 
 /**
  * Lista de todas as rotas do sistema
@@ -91,24 +91,36 @@ const routes: Routes &#x3D; [
   {
     path: &quot;&quot;,
     component: AppComponent,
-    canActivate: [AuthenticatedGuard]
+    canActivate: [ValidaToken]
   },
   {
     path: &quot;&quot;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./login-page/login-page.module&#x27;).then((m) &#x3D;&gt; m.LoginPageModule)&quot;
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;../../login-page/login-page.module&#x27;).then((m) &#x3D;&gt; m.LoginPageModule)&quot;
   },
   {
     path: &quot;&quot;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./home-page/home-page.module&#x27;).then((m) &#x3D;&gt; m.HomePageModule)&quot;,
-    canActivate: [AuthenticatedGuard]
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;../../home-page/home-page.module&#x27;).then((m) &#x3D;&gt; m.HomePageModule)&quot;,
+    canActivate: [ValidaToken],
   },
   {
     path: &quot;&quot;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./recover-password/recover-password.module&#x27;).then((m) &#x3D;&gt; m.RecoverPasswordModule)&quot;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;../../recuperar-senha-page/recuperar-senha.module&#x27;).then((m) &#x3D;&gt; m.RecuperarSenhaModule)&quot;,
   },
   {
     path: &quot;&quot;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./reset-password/reset-password.module&#x27;).then((m) &#x3D;&gt; m.ResetPasswordModule)&quot;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;../../resetar-senha-page/reseta-senha.module&#x27;).then((m) &#x3D;&gt; m.ResetaSenhaModule)&quot;,
+  },
+  {
+    path: &quot;&quot;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;../../home-page/view-projeto/view-projeto.module&#x27;).then((m) &#x3D;&gt; m.ViewProjetoModule)&quot;,
+  },
+  {
+    path: &quot;&quot;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;../../components/404/not-found.module&#x27;).then((m) &#x3D;&gt; m.NotFoundModule)&quot;,
+  },
+  { 
+    path: &#x27;**&#x27;, 
+    redirectTo: &#x27;404&#x27; 
   }
 ];
 
@@ -116,7 +128,7 @@ const routes: Routes &#x3D; [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 </code></pre>
     </div>
 </div>

@@ -7,7 +7,7 @@ function queryTestDb(query, config) {
     host: 'localhost',
     user: 'root',
     password: 'root',
-    database: 'vita_scientia_test'
+    database: 'vita_scientia_qlab01'
   });
 
   // retorna uma Promise
@@ -37,6 +37,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('task', { queryDb: query => { return queryTestDb(query, config) }, }); 
     },
+    baseUrl: 'http://localhost:4200/'
   },
   video: true
 });

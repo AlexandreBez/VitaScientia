@@ -1,38 +1,38 @@
-<app-spinner *ngIf="isLoading"></app-spinner>
+<app-spinner *ngIf="carregando"></app-spinner>
 <main class="d-flex">
   <div class="flex-row p-5" id="main-form">
     
-    <div class="alert alert-warning flex-column" id="alert" *ngIf="errorMsg != null" role="alert">
+    <div class="alert alert-warning flex-column" id="alert" *ngIf="mensagemDeErro != null" role="alert">
       <i class="bi bi-exclamation-circle text-dark"></i>
-      {{errorMsg}}
+      {{mensagemDeErro}}
     </div>
     <div class="flex-column mb-3 mt-4">
       <img src="/assets/imgs/logo.png" id="logo" alt="logo" width="180" height="180">
     </div>
 
-    <form class="flex-column" (ngSubmit)="authenticateUser()" #loginForm="ngForm">
+    <form class="flex-column" (ngSubmit)="autenticaUsuario()" #formularioLogin="ngForm">
       <div class="mb-3">
-        <label for="username" class="form-label">
+        <label for="email" class="form-label">
           <i class="bi bi-person-circle"></i>
-          Usuário
+          Email
         </label>
-        <input type="email" class="form-control" placeholder="exemplo@email.com" id="username"
-          aria-describedby="emailHelp" name="username" #username="ngModel" ngModel email>
+        <input type="email" class="form-control" autocomplete="email" placeholder="exemplo@email.com" id="email"
+          aria-describedby="email" name="email" #email="ngModel" ngModel email>
       </div>
       <div class="mb-3">
-        <label for="password" class="form-label">
+        <label for="senha" class="form-label">
           <i class="bi bi-lock"></i>
           Senha
         </label>
-        <input type="password" placeholder="**********" class="form-control" id="password" name="password"
-          #password="ngModel" ngModel>
+        <input type="password" autocomplete="current-password" placeholder="**********" class="form-control" id="senha" name="senha"
+          #senha="ngModel" ngModel>
       </div>
-      <button id="login" (click)="authenticateUser()" class="btn btn-submit mb-3 ps-4 pe-4">
+      <button id="entrar" type="submit" class="btn btn-submit mb-3 ps-4 pe-4">
         <i class="bi bi-door-open"></i>
         Entrar
       </button>
       <div>
-        <a id="recoverPasswordLink" routerLink="/RecoverPassword">Resetar minha senha</a>
+        <a id="recuperaSenhaLink" routerLink="/RecuperarSenha">Resetar minha senha</a>
       </div>
     </form>
   </div>

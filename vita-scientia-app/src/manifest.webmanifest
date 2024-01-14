@@ -1,0 +1,17 @@
+{
+  "name": "Vita Scientia",
+  "short_name": "Vita Scientia",
+  "theme_color": "#eb710e",
+  "background_color": "#252626",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icons/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

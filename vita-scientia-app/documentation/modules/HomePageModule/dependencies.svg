@@ -22,17 +22,25 @@
 <text text-anchor="start" x="429.73" y="-15.4" font-family="Times-12" font-size="14.00"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_HomePageModule</title>
-<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="161,-70 161,-195 335,-195 335,-70 161,-70"/>
+<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="9,-70 9,-195 487,-195 487,-70 9,-70"/>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_HomePageModule_providers</title>
+<polygon fill="none" stroke="black" points="321,-78 321,-130 479,-130 479,-78 321,-78"/>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_HomePageModule_imports</title>
+<polygon fill="none" stroke="black" points="183,-78 183,-130 313,-130 313,-78 183,-78"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_HomePageModule_declarations</title>
-<polygon fill="none" stroke="black" points="169,-78 169,-130 327,-130 327,-78 169,-78"/>
+<polygon fill="none" stroke="black" points="17,-78 17,-130 175,-130 175,-78 17,-78"/>
 </g>
 <!-- HomePageComponent -->
 <g id="node1" class="node">
 <title>HomePageComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="319.26,-122 176.74,-122 176.74,-86 319.26,-86 319.26,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00">HomePageComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="167.26,-122 24.74,-122 24.74,-86 167.26,-86 167.26,-122"/>
+<text text-anchor="middle" x="96" y="-99.8" font-family="Times,serif" font-size="14.00">HomePageComponent</text>
 </g>
 <!-- HomePageModule -->
 <g id="node2" class="node">
@@ -43,8 +51,32 @@
 <!-- HomePageComponent&#45;&gt;HomePageModule -->
 <g id="edge1" class="edge">
 <title>HomePageComponent&#45;&gt;HomePageModule</title>
+<path fill="none" stroke="black" d="M96,-122.11C96,-141.34 96,-169 96,-169 96,-169 177.49,-169 177.49,-169"/>
+<polygon fill="black" stroke="black" points="177.49,-172.5 187.49,-169 177.49,-165.5 177.49,-172.5"/>
+</g>
+<!-- AnotacaoModule -->
+<g id="node3" class="node">
+<title>AnotacaoModule</title>
+<polygon fill="#8dd3c7" stroke="black" points="304.69,-122 301.69,-126 280.69,-126 277.69,-122 191.31,-122 191.31,-86 304.69,-86 304.69,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00">AnotacaoModule</text>
+</g>
+<!-- AnotacaoModule&#45;&gt;HomePageModule -->
+<g id="edge2" class="edge">
+<title>AnotacaoModule&#45;&gt;HomePageModule</title>
 <path fill="none" stroke="black" d="M248,-122.11C248,-122.11 248,-140.99 248,-140.99"/>
 <polygon fill="black" stroke="black" points="244.5,-140.99 248,-150.99 251.5,-140.99 244.5,-140.99"/>
+</g>
+<!-- UsuarioService -->
+<g id="node4" class="node">
+<title>UsuarioService</title>
+<ellipse fill="#fdb462" stroke="black" cx="400" cy="-104" rx="70.62" ry="18"/>
+<text text-anchor="middle" x="400" y="-99.8" font-family="Times,serif" font-size="14.00">UsuarioService</text>
+</g>
+<!-- UsuarioService&#45;&gt;HomePageModule -->
+<g id="edge3" class="edge">
+<title>UsuarioService&#45;&gt;HomePageModule</title>
+<path fill="none" stroke="black" d="M400,-122.11C400,-141.34 400,-169 400,-169 400,-169 318.51,-169 318.51,-169"/>
+<polygon fill="black" stroke="black" points="318.51,-165.5 308.51,-169 318.51,-172.5 318.51,-165.5"/>
 </g>
 </g>
 </svg>

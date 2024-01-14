@@ -4,7 +4,7 @@ Este projeto é para fins de laboratório e pesquisa,
 usando Arduino/RaspiberryPI para obter reações e resultados químicos/físicos atravez dos sensores.
 Ajudando também a organizar as ideias/projetos/pesquisas atraves de simulaçoes, calculos, e valores a serem gastos.
 
-## O projeto está usando na versao 1.0.0: 
+## O projeto está usando na versao 2.0.0: 
 
 - *Spring Boot* - Back-End
 - *Thymeleaf* - Framework de HTML
